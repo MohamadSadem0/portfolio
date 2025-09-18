@@ -7,7 +7,7 @@ export const Projects = () => {
   const [q, setQ] = React.useState('')
   const filtered = React.useMemo(() => {
     const s = q.trim().toLowerCase(); if (!s) return profile.projects
-    return profile.projects.filter(p => [p.name, p.tagline, p.description, p.tech.join(' ')].join(' ').toLowerCase().includes(s))
+    return profile.projects.filter(p => [p.name, p.description, p.tech.join(' ')].join(' ').toLowerCase().includes(s))
   }, [q])
 
   return (
