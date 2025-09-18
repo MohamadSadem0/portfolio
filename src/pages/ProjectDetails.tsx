@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { profile } from '@/data/Profile'
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '../components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
+import { Badge } from '@/components/ui/badge'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 
 export default function ProjectDetailsPage() {

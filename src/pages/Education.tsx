@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from '../components/Container'
 import { SectionHeader } from '../components/SectionHeader'
 import { profile } from '../data/Profile'
-import { Badge } from '../components/ui/Badge'
+import { Badge } from '../components/ui/badge'
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Bard'
 export default function EducationPage() {
   return (
