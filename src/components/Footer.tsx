@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from './Container'
-import { profile } from '../data/Profile'
+import { profile } from '../data/profile'
 export const Footer = () => (
   <footer className="border-t border-black/5 dark:border-white/10">
     <Container>

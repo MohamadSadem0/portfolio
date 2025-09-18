@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Github, Linkedin, Code2, Download, Sun, Moon } from 'lucide-react'
 import { Container } from './Container'
-import { profile } from '../data/Profile'
+import { profile } from '../data/profile'
 export const Navbar = () => {
   const location = useLocation()
   const [dark, setDark] = React.useState(true)

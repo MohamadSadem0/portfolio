@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { profile } from '../data/Profile'
+import { profile } from '../data/profile'
 export const Teaching = () => (
   <main className="container py-10">
     <h1 className="text-2xl font-semibold mb-6">Teaching</h1>

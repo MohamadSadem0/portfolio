@@ -1,9 +1,17 @@
+export type Testimonial = { name: string; quote: string }
 export type Project = {
-  slug: string; name: string; period: string; tagline?: string; description: string;
-  tech: string[]; highlights?: string[]; links?: { label:string; href:string }[];
+  slug?: string
+  name: string
+  period?: string | null
+  time?: string
+  tagline?: string
+  description: string
+  tech: string[]
+  highlights?: string[]
+  links?: { label: string; href: string }[]
 }
-export type EducationItem = { school:string; degree:string; time?:string; note?:string }
-export type ExperienceItem = { company:string; role:string; time:string; bullets:string[] }
+export type EducationItem = { school: string; degree: string; time?: string; note?: string }
+export type ExperienceItem = { company: string; role: string; time: string; bullets: string[] }
 
 export const profile = {
   name: "Mohamad Sadem Serhal",
@@ -14,10 +22,12 @@ export const profile = {
   phone: "+961 71 851 054",
   github: "https://github.com/Mohamadsadem0",
   linkedin: "https://www.linkedin.com/in/mohamad-serhal-721658229",
+
   education: [
-    { school: "Lebanese International University", degree: "B.Sc. in Computer Science (Expected 2026)", time: "2022 – 2026" },
+    { school: "Lebanese International University", degree: "B.Sc. in Computer Science (Expected 2026)", time: "2022 – 2026", note: "One semester ahead toward completing my bachelor." },
     { school: "Web Development Bootcamp", degree: "React, Next.js, REST APIs, Deployments", time: "Feb 2024 – Apr 2024" },
   ],
+
   skills: {
     frontend: ["Next.js (TypeScript)", "React", "MUI", "ShadCN", "Tailwind CSS", "Bootstrap"],
     backend: ["Spring Boot 3 (Java 21)", "Express.js/Node.js", "REST APIs", "JWT Auth", "Laravel"],
@@ -25,28 +35,30 @@ export const profile = {
     languages: ["Java", "JavaScript (ES6+)", "TypeScript", "PHP", "HTML", "CSS"],
     tools: ["Git", "Docker", "Heroku", "Render", "CI/CD Basics", "Agile"],
   },
+
   projects: [
     {
-      slug: 'epic-megajam-prototype',
-      name: 'Epic MegaJam Prototype',
-      period: 'Epic MegaJam',
+      slug: "epic-megajam-prototype",
+      name: "Epic MegaJam Prototype",
+      period: "Epic MegaJam",
       description:
-        'Participated in Epic MegaJam and delivered a playable prototype focusing on gameplay loop, level flow, menus/UX, and polish within jam constraints.',
-      tech: ['Prototyping', 'Gameplay Loop', 'Level Design', 'Team Collaboration'],
-      highlights: ['Tight deadline execution', 'Iterative playtesting & tuning', 'Scope control & triage'],
+        "Participated in Epic MegaJam and delivered a playable prototype focusing on gameplay loop, level flow, menus/UX, and polish within jam constraints.",
+      tech: ["Prototyping", "Gameplay Loop", "Level Design", "Team Collaboration"],
+      highlights: ["Tight deadline execution", "Iterative playtesting & tuning", "Scope control & triage"],
       links: [],
     },
     {
-      slug: 'shopiishop',
-      name: 'ShopiiShop',
-      period: 'Aug 2024 – Feb 2025',
+      slug: "shopiishop",
+      name: "ShopiiShop",
+      period: "Aug 2024 – Feb 2025",
       description:
-        'Next.js (TS) + Spring Boot 3 platform. JWT auth, RESTful APIs, and real-time sockets; Dockerized services on Oracle VM; responsive UI with Tailwind.',
-      tech: ['Next.js', 'TypeScript', 'Spring Boot 3', 'JWT', 'WebSockets', 'Docker', 'Tailwind CSS'],
-      highlights: ['Modular backend', 'Role-based access with JWT', 'Real-time updates via sockets'],
-      links: [{ label: 'Download CV', href: '/portfolio/cv.pdf' }],
+        "Next.js (TS) + Spring Boot 3 platform. JWT auth, RESTful APIs, and real-time sockets; Dockerized services on Oracle VM; responsive UI with Tailwind.",
+      tech: ["Next.js", "TypeScript", "Spring Boot 3", "JWT", "WebSockets", "Docker", "Tailwind CSS"],
+      highlights: ["Modular backend", "Role-based access with JWT", "Real-time updates via sockets"],
+      links: [{ label: "Download CV", href: "/portfolio/cv.pdf" }],
     },
   ],
+
   experience: [
     {
       company: "Private Tutoring",
@@ -79,10 +91,19 @@ export const profile = {
       ],
     },
   ],
+
   languagesKnown: [
     { name: "Arabic", level: "Native" },
     { name: "English", level: "Intermediate" },
     { name: "French", level: "Intermediate" },
   ],
+
+  // ✅ Add this so Teaching.tsx compiles:
+  testimonials: [
+    { name: "Ali — CS Student",   quote: "Mohamad explains React and APIs so clearly. I shipped my first full app in weeks." },
+    { name: "Sara — Junior Dev",  quote: "His Spring Boot sessions unlocked backend concepts for me." },
+    { name: "Hadi — Designer",    quote: "The jam prototype felt surprisingly polished for a weekend build." },
+  ],
 } as const
+
 export type Profile = typeof profile

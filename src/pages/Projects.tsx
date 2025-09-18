@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { profile } from '../data/Profile'
+import { profile } from '../data/profile'
 import { Badge } from '../components/ui/badge'
 
 export const Projects = () => {
