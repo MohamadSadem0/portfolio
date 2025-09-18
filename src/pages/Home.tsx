@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { profile } from '../data/profile'
+import { profile } from '../data/Profile'
 import { Badge } from '../components/ui/Badge'
 import { Mail, Github } from 'lucide-react'
 import { Link } from 'react-router-dom'

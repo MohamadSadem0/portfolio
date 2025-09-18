@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { ExternalLink, Star } from 'lucide-react'
 import { Project } from '../types'
 import { Badge } from './ui/Badge'
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from './ui/Card'
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from './ui/Bard'
 import { Tilt } from './Tilt'
 export const ProjectCard = ({ p }: { p: Project }) => (
   <Tilt className="group">

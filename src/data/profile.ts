@@ -59,7 +59,7 @@ export const profile = {
       links: [],
     },
     {
-      slug: 'shopiishop',
+      slug: 'shopiishop', 
       name: 'ShopiiShop',
       period: 'Aug 2024 – Feb 2025',
       tagline: 'Multi-vendor eCommerce with real-time features',

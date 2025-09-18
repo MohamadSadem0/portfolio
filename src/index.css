@@ -1,48 +1,38 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Theme tokens */
-:root {
-  --bg: #0b0f1a;
-  --fg: #ffffff;
-  --primary: #60A5FA;
-  --primary-fg: #001122;
-  --muted: #0f1627;
-  --muted-fg: #a1a1aa;
-  --border: rgba(255,255,255,0.12);
+:root{
+  --bg:#0b0f1a; --fg:#ffffff;
+  --primary:#60A5FA; --primary-fg:#001122;
+  --muted:#0f1627; --muted-fg:#a1a1aa;
+  --border:rgba(255,255,255,0.12);
 }
-.dark {}
 
-/* Background gradients */
-body {
+/* Subtle background gradients (optional) */
+body{
   background-image:
     radial-gradient(900px 600px at 10% -10%, rgba(37,99,235,0.25), transparent 60%),
     radial-gradient(700px 500px at 90% 0%, rgba(99,102,241,0.22), transparent 60%),
     radial-gradient(500px 500px at 50% 110%, rgba(14,165,233,0.18), transparent 60%);
 }
 
-/* Primitive components */
-.card { @apply rounded-2xl border bg-white/5 backdrop-blur border-[color:var(--border)]; }
-.card-header { @apply p-5 border-b border-[color:var(--border)]; }
-.card-title { @apply text-lg font-semibold; }
-.card-content { @apply p-5; }
-.card-footer { @apply p-5 border-t border-[color:var(--border)]; }
-.btn { @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-xl transition; }
-.btn-primary { @apply text-white; background: linear-gradient(135deg, #60A5FA, #22D3EE); }
-.btn-primary:hover { filter: brightness(0.95); }
-.btn-outline { @apply border border-[color:var(--border)] hover:bg-white/5; }
-.btn-ghost { @apply hover:bg-white/10; }
-.badge { @apply inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium; background: rgba(255,255,255,0.08); }
-.container { @apply max-w-6xl mx-auto px-4; }
-.link { @apply text-sm text-[color:var(--muted-fg)] hover:text-white transition; }
-.text-muted-foreground { color: var(--muted-fg); }
-.bg-background { background-color: var(--bg); }
-.text-foreground { color: var(--fg); }
-.border-b { border-bottom-color: var(--border); }
-.bg-primary\/10 { background-color: color-mix(in srgb, var(--primary) 12%, transparent); }
-.text-primary { color: var(--primary); }
+/* Primitives used by Button/Card/Badge */
+.card{ @apply rounded-2xl border bg-white/5 backdrop-blur; border-color: var(--border); }
+.card-header{ @apply p-5 border-b; border-color: var(--border); }
+.card-title{ @apply text-lg font-semibold; }
+.card-content{ @apply p-5; }
+.card-footer{ @apply p-5 border-t; border-color: var(--border); }
 
-/* Utilities */
-.size-9 { width: 2.25rem; height: 2.25rem; }
+.btn{ @apply inline-flex items-center justify-center text-sm font-medium transition; }
+.btn-primary{ @apply text-white rounded-xl px-4 py-2; background:linear-gradient(135deg,#60A5FA,#22D3EE); }
+.btn-outline{ @apply rounded-xl px-4 py-2 border hover:bg-white/5; border-color: var(--border); }
+.btn-ghost{ @apply rounded-xl px-3 py-1.5 hover:bg-white/10; }
+
+.badge{ @apply inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium; background: rgba(255,255,255,0.08); }
+
+.text-muted-foreground{ color: var(--muted-fg); }
+.bg-background{ background-color: var(--bg); }
+.text-foreground{ color: var(--fg); }
+.size-9{ width:2.25rem; height:2.25rem; }
