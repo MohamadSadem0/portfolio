@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { profile } from '../data/Profile'
-import { Badge } from '../components/ui/Badge'
+import { Badge } from '../components/ui/badge'
 
 export const Projects = () => {
   const [q, setQ] = React.useState('')

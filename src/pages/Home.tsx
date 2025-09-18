@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { profile } from '../data/Profile'
-import { Badge } from '../components/ui/Badge'
+import { Badge } from '../components/ui/badge'
 import { Mail, Github } from 'lucide-react'
 import { Link } from 'react-router-dom'
 

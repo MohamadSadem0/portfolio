@@ -3,7 +3,7 @@ import { Container } from '../components/Container'
 import { SectionHeader } from '../components/SectionHeader'
 import { profile } from '../data/Profile'
 import { Badge } from '../components/ui/badge'
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Bard'
+import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/bard'
 export default function EducationPage() {
   return (
     <main>
