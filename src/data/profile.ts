@@ -10,7 +10,7 @@ export const profile = {
   github: 'https://github.com/Mohamadsadem0',
   linkedin: 'https://www.linkedin.com/in/mohamad-serhal-721658229',
   avatarSrc: '/portfolio/profile.jpg',
-  education: [
+  education: [ 
     { school: 'Lebanese International University', degree: 'B.Sc. in Computer Science', note: 'Currently one semester ahead toward completing my bachelor.' },
     { school: 'Web Development Bootcamp', degree: 'React, Next.js, REST APIs, Deployments' },
   ],
