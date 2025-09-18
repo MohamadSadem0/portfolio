@@ -1,13 +1,29 @@
 
-# Portfolio – GitHub Pages Ready
+# Mohamad Serhal — Portfolio
 
-1) Edit `vite.config.ts` -> set `base: '/REPO_NAME/'`
-2) Install & test:
-   npm i
-   npm run dev
-3) Create repo & push (GitHub CLI):
-   gh auth login
-   git init && git add . && git commit -m "feat: portfolio"
-   git branch -M main
-   gh repo create MohamadSadem0/REPO_NAME --public --source=. --remote=origin --push
-4) Settings → Pages → Source: GitHub Actions
+Built with React + TypeScript + Vite + Tailwind.
+- HashRouter (GitHub Pages friendly)
+- Vite base already set to `/portfolio/`
+- GH Actions workflow for auto deploy
+
+## Run locally
+```bash
+npm i
+npm run dev
+```
+
+## Create the `portfolio` repo and push
+```bash
+gh auth login
+
+git init
+git add .
+git commit -m "feat: portfolio initial"
+git branch -M main
+
+gh repo create MohamadSadem0/portfolio --public --source=. --remote=origin --push
+```
+
+## Enable GitHub Pages
+- Repo → Settings → Pages → Source: GitHub Actions
+- Site: https://MohamadSadem0.github.io/portfolio/

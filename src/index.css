@@ -3,14 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.card{ @apply rounded-2xl border border-gray-200/60 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur; }
-.card-header{ @apply p-5 border-b border-black/5 dark:border-white/10; }
-.card-title{ @apply text-lg font-semibold; }
-.card-content{ @apply p-5; }
-.card-footer{ @apply p-5 border-t border-black/5 dark:border-white/10; }
-.btn{ @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition rounded-xl; }
-.btn-primary{ @apply bg-blue-600 text-white hover:bg-blue-700; }
-.btn-outline{ @apply border border-gray-300 dark:border-white/20 hover:bg-black/5; }
-.badge{ @apply inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium bg-gray-100 dark:bg-white/10; }
-.container{ @apply max-w-6xl mx-auto px-4; }
-.link{ @apply text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition; }
+.card { @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur; }
+.card-header { @apply p-5 border-b border-white/10; }
+.card-title { @apply text-lg font-semibold; }
+.card-content { @apply p-5; }
+.card-footer { @apply p-5 border-t border-white/10; }
+.btn { @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-xl transition; }
+.btn-primary { @apply bg-blue-600 hover:bg-blue-700 text-white; }
+.btn-outline { @apply border border-white/20 hover:bg-white/5; }
+.badge { @apply inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium bg-white/10; }
+.container { @apply max-w-6xl mx-auto px-4; }
+.link { @apply text-sm text-gray-300 hover:text-white transition; }
