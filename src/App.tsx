@@ -15,10 +15,10 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "./components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "./components/ui/card";
+import { Badge } from "./components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
 const profile = {
   name: "Mohamad Sadem Serhal",
