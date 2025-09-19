@@ -8,7 +8,7 @@ export const Footer = () => (
         <div>© {new Date().getFullYear()} {profile.name}. All rights reserved.</div>
         <div className="flex items-center gap-3">
           <a className="hover:underline" href="/cv.pdf" download>Download CV</a>
-          <a className="hover:underline" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a className="hover:underline" href={profile.github} target="_blank" rel="noreferrer">GitHuba</a>
           <a className="hover:underline" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </div>
