@@ -12,8 +12,12 @@ import { OrbitControls, useGLTF } from '@react-three/drei';
 function DeskLaptop() {
   // Load the GLB models.  The files live in public/models so they can be fetched
   // relative to the site root.  useGLTF caches requests so repeated renders are cheap.
-  const desk = useGLTF('/models/Desk.glb');
-  const laptop = useGLTF('/models/laptop.glb');
+  // When deploying to GitHub Pages the site is served from a subpath (e.g. /portfolio/).
+  // Vite exposes import.meta.env.BASE_URL to generate the correct absolute URL
+  // based on the configured `base` option.  Concatenate the model paths to avoid
+  // 404 errors on GitHub Pages (see README for details).
+  const desk = useGLTF(`${import.meta.env.BASE_URL}models/Desk.glb`);
+  const laptop = useGLTF(`${import.meta.env.BASE_URL}models/laptop.glb`);
   const groupRef = useRef<any>(null!);
   useFrame(() => {
     // Apply a slow rotation to the entire group for a dynamic display.
@@ -32,8 +36,9 @@ function DeskLaptop() {
 }
 
 // Preload the models ahead of time to avoid a flash of untextured geometry during the first render.
-useGLTF.preload('/models/Desk.glb');
-useGLTF.preload('/models/laptop.glb');
+// Use the same BASE_URL-aware paths here as above.
+useGLTF.preload(`${import.meta.env.BASE_URL}models/Desk.glb`);
+useGLTF.preload(`${import.meta.env.BASE_URL}models/laptop.glb`);
 
 export default function DeskLaptopScene() {
   return (
