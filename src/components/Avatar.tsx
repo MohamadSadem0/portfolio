@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-export const Avatar = ({ src='/profile.jpg', alt='Profile photo', size=200 }: { src?: string; alt?: string; size?: number }) => {
+export const Avatar = ({ src='/portfolio/profile.jpg', alt='Profile photo', size=200 }: { src?: string; alt?: string; size?: number }) => {
   const [imgSrc, setImgSrc] = React.useState(src)
-  const fallback = '/1718227889695.jpg'
+  const fallback = '/portfolio/profile.jpg'
   return (
     <motion.div className="relative" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}>
       <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-cyan-400 opacity-60 blur-2xl" aria-hidden />

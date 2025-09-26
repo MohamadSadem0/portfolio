@@ -1,9 +1,10 @@
-# .github/workflows/deploy.yml
-name: Build & Deploy (GitHub Pages)
+name: Deploy static content to Pages
 
 on:
+  # Trigger the workflow on pushes to the main branch
   push:
-    branches: [ main ]   # or your default branch
+    branches: ['main']
+  # Allow manual deployment from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -11,40 +12,42 @@ permissions:
   pages: write
   id-token: write
 
+# Allow one concurrent deployment.  Pending deployments will be cancelled to avoid
+# queuing up builds while new commits arrive.
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      # IMPORTANT: clean install to dodge npm optional-deps bug
-      - name: Clean install
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install
-
-      - name: Build
-        env:
-          # force Rollup to use JS fallback instead of native binary
-          ROLLUP_SKIP_NODEJS_NATIVE: 'true'
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
     steps:
-      - id: deployment
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

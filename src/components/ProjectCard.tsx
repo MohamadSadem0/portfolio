@@ -1,18 +1,51 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { ExternalLink, Star } from 'lucide-react'
-import { Project } from '../types'
-import { Badge } from './ui/badge'
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from './ui/card'
-import { Tilt } from './Tilt'
-export const ProjectCard = ({ p }: { p: Project }) => (
-  <Tilt className="group">
-    <Card>
-      <CardHeader><div className="flex items-center justify-between"><CardTitle className="text-lg flex items-center gap-2">{p.name}<Star className="h-4 w-4 text-yellow-500/80 hidden group-hover:inline" /></CardTitle><span className="text-xs text-gray-500 dark:text-gray-400">{p.period}</span></div></CardHeader>
-      <CardContent className="space-y-4"><p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{p.tagline}</p><div className="flex flex-wrap gap-2">{p.tech.map(t => <Badge key={t}>{t}</Badge>)}</div></CardContent>
-      <CardFooter className="flex items-center justify-between"><Link to={`/projects/${p.slug}`} className="btn btn-primary">View details</Link>
-        <div className="flex gap-2">{(p.links || []).map(l => <a key={l.label} className="btn btn-outline text-sm" href={l.href} target="_blank" rel="noreferrer"><ExternalLink className="mr-2 h-3.5 w-3.5" />{l.label}</a>)}</div>
-      </CardFooter>
-    </Card>
-  </Tilt>
-)
+import React from 'react';
+import { Project } from '../data/profile';
+import { Link } from 'react-router-dom';
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+// A card component used to showcase a single project.  Displays
+// screenshot, name, description and tags.  If a link is provided
+// clicking the card will open it in a new tab; otherwise it
+// gracefully degrades to a non‑clickable card.
+export default function ProjectCard({ project }: ProjectCardProps) {
+  const content = (
+    <div className="group relative flex flex-col h-full overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 shadow hover:shadow-lg transition-shadow duration-200">
+      <div className="relative">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-200"
+        />
+      </div>
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="text-lg font-semibold mb-1 text-gray-800 dark:text-gray-100">{project.name}</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400 flex-1 leading-relaxed">
+          {project.description}
+        </p>
+        {project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-3">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-block bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary text-xs font-medium px-2 py-1 rounded"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  return project.link ? (
+    <a href={project.link} target="_blank" rel="noreferrer" className="block h-full">
+      {content}
+    </a>
+  ) : (
+    content
+  );
+}

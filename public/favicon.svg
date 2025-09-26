@@ -1,1 +1,11 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect rx='24' width='128' height='128' fill='#60A5FA'/><text x='50%' y='58%' text-anchor='middle' font-size='64' font-family='monospace' fill='#001122'>M</text></svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 12h18M12 3v18" />
+</svg>
